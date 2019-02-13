@@ -1,8 +1,15 @@
 <template>
   <div class="home">
+    <section class="img">
     <img src="../assets/logo.svg" alt="">
-    <h1> Were it´s @!</h1>
+    </section>
+    <section class="name">
+      <router-link class="link" to="/Buy"><h1> Were it´s @!</h1></router-link>
+    
+    </section>
+    <section class="tagLine">
     <h2>Ticketing made easy..</h2>
+    </section>
   </div>
 </template>
 
@@ -14,15 +21,31 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 @import url("https://fonts.googleapis.com/css?family=Sansita:400,800i");
-body {
-  background-color:rgb(45, 3, 80);
-  text-align: center;
-}
-img{
-  margin-top: 50%;
-}
+
+  .home {
+    margin: 2rem 0;
+    font-family: 'Sansita', sans-serif;
+    text-align: center;
+    max-width: 18rem;
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 5fr 1fr 1fr ;
+    grid-template-areas:
+    "img"
+     "name"
+    "tagLine"
+    }
+      .img {
+  grid-area: img;
+} 
+  .name {
+  grid-area: name;
+} 
+  .tagLine {
+  grid-area: tagLine;
+} 
 h1{
   font-family: 'Sansita', sans-serif;
   font-size: 2rem;
@@ -30,9 +53,14 @@ h1{
   padding: 0%;
   color: #F56B9A;
 }
-h2 {
+h2 {  
+  margin: 0%;
+  padding: 0%;
   font-size: .7rem;
   font-style: italic;
   color: whitesmoke;
+}
+.link {
+  text-decoration: none;
 }
 </style>
