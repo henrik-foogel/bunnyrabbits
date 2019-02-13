@@ -6,8 +6,8 @@
     </section>
     <section class="eventInfo">
       <h2>Bamse på turné</h2> 
-      <p>Scandinavium</p>
-      <p>16 NOV lör - 14:00</p>
+      <p id="date">16 NOV lör - 14:00</p>
+      <p> @Scandinavium</p>
     </section>
 
     <section class="sumPrice"><h4>999:-</h4></section>
@@ -35,7 +35,7 @@ export default {
 @import url("https://fonts.googleapis.com/css?family=Sansita:400,800i");
 
   .buy {
-    margin: 2rem 0;
+    margin: auto 0;
     font-family: 'Sansita', sans-serif;
     max-width: 18rem;
     width: 100%;
@@ -136,5 +136,8 @@ h4 {
 }
 a {
   text-decoration: none;
+}
+#date {
+  color:#37AEAB;
 }
 </style>

@@ -11,7 +11,8 @@
 <style>
 
 body {
-  margin: 0;
+  margin: 10%;
+  background-color: #231F42;
 }
 
 #app {
@@ -21,8 +22,8 @@ body {
   background: #231F42;
   text-align: center;
   margin: 0;
-  width: 100%;
   min-height: 568px;
+  width: 100%;
 }
 .fade-enter-active,
 .fade-leave-active {
