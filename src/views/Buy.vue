@@ -1,7 +1,7 @@
 <template>
   <div class="buy">
     <section class="heading">
-    <h1>Kassa</h1>
+   <!-- <h1>Kassa</h1> -->
     <p>Du köper biljetter till följande evenimang:</p>
     </section>
     <section class="eventInfo">
@@ -35,7 +35,6 @@ export default {
 @import url("https://fonts.googleapis.com/css?family=Sansita:400,800i");
 
   .buy {
-    margin: auto 0;
     font-family: 'Sansita', sans-serif;
     max-width: 18rem;
     width: 100%;

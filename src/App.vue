@@ -11,7 +11,7 @@
 <style>
 
 body {
-  margin: 10%;
+  margin: 1rem 0;
   background-color: #231F42;
 }
 
@@ -21,7 +21,6 @@ body {
   align-items: center;
   background: #231F42;
   text-align: center;
-  margin: 0;
   min-height: 568px;
   width: 100%;
 }
