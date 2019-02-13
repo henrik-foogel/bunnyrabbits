@@ -22,7 +22,6 @@ body {
   text-align: center;
   margin: 0;
   width: 100%;
-  height: 100%;
   min-height: 568px;
 }
 .fade-enter-active,

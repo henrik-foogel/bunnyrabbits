@@ -10,13 +10,13 @@
       <p>16 NOV lör - 14:00</p>
     </section>
 
-    <section class="sumPrice">1045:-</section>
+    <section class="sumPrice"><h4>999:-</h4></section>
     <section class="amountMinus">
-      <button>-</button>
+      <a href="to/#"><h4>-</h4></a>
     </section>
-    <section class="amount"> 3</section>
+    <section class="amount"> <h4>3</h4></section>
     <section class="amountPlus">
-      <button>+</button>
+      <a href="to/#"><h4>+</h4></a>
     </section>
     
     <section class="btnBuy">
@@ -40,8 +40,8 @@ export default {
     max-width: 18rem;
     width: 100%;
     display: grid;
-    grid-template-columns: 3;
-    grid-template-rows: 90px 120px 120px 90px  90px ;
+    grid-template-columns:  repeat(3, 1fr);
+    grid-template-rows: 90px 120px 120px 90px auto ;
     grid-template-areas:
     "heading heading heading"
     "eventInfo eventInfo eventInfo"
@@ -56,7 +56,7 @@ export default {
 
 .eventInfo {
   grid-area: eventInfo;
-  line-height: 40px;
+  line-height: 30px;
 }
 .eventInfo h2, p {
   vertical-align: middle;
@@ -102,14 +102,11 @@ export default {
 }
 .btnBuy {
   grid-area: btnBuy;
-
   display: flex;
   justify-content: center;
   align-items: center;
 }
-button {
-  font-size: 3rem;
-}
+
 .btn {  
   display: flex;
   justify-content: center;
@@ -132,5 +129,12 @@ h1, h2 {
 }
 p {
   color: #ffffff;
+}
+h4 {
+  color: #ffffff;
+  font-size: 2rem;
+}
+a {
+  text-decoration: none;
 }
 </style>

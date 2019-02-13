@@ -31,7 +31,7 @@ export default {
     max-width: 18rem;
     display: grid;
     grid-template-columns: 1;
-    grid-template-rows: 5fr 1fr 1fr ;
+    grid-template-rows: 5fr 1fr auto ;
     grid-template-areas:
     "img"
      "name"
