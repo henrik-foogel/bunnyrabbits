@@ -17,7 +17,7 @@ export default {
 <style>
 @import url("https://fonts.googleapis.com/css?family=Sansita:400,800i");
 body {
-  background-color:rgb(45, 3, 80);
+  background-color:#231F42;
   text-align: center;
 }
 img{
