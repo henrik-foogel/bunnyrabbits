@@ -1,24 +1,24 @@
 <template>
   <div class="buy">
     <section class="heading">
-    <h1>Kassa</h1>
+   <!-- <h1>Kassa</h1> -->
     <p>Du köper biljetter till följande evenimang:</p>
     </section>
     <section class="eventInfo">
-      <h3>Bamse på turné</h3> 
-      <p>Scandinavium</p>
-      <p>16 NOV lör - 14:00</p>
+      <h2>Bamse på turné</h2> 
+      <p id="date">16 NOV lör - 14:00</p>
+      <p> @Scandinavium</p>
     </section>
-    <section class="empty"></section>
-    <section class="sumPrice">1045:-</section>
+
+    <section class="sumPrice"><h4>999:-</h4></section>
     <section class="amountMinus">
-      <button>-</button>
+      <a href="to/#"><h4>-</h4></a>
     </section>
-    <section class="amount"> 3</section>
+    <section class="amount"> <h4>3</h4></section>
     <section class="amountPlus">
-      <button>+</button>
+      <a href="to/#"><h4>+</h4></a>
     </section>
-    <section class="empty2"></section>
+    
     <section class="btnBuy">
       <router-link class="btn" to="/#">Boka!</router-link>
     </section>
@@ -32,76 +32,80 @@ export default {
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css?family=Sansita:400,800i");
 
   .buy {
-    margin: 2rem 0;
     font-family: 'Sansita', sans-serif;
     max-width: 18rem;
     width: 100%;
     display: grid;
-    grid-template-columns: 3;
-    grid-template-rows: 90px 90px 30px 90px 90px 30px 90px ;
+    grid-template-columns:  repeat(3, 1fr);
+    grid-template-rows: 90px 120px 120px 90px auto ;
     grid-template-areas:
     "heading heading heading"
-     "eventInfo eventInfo eventInfo"
-     "empty empty empty"
+    "eventInfo eventInfo eventInfo"
     "sumPrice sumPrice sumPrice"
     "amountMinus amount amountPlus"
-    "empty2 empty2 empty2"
     "btnBuy btnBuy btnBuy"
   }
 
   .heading {
   grid-area: heading;
-  background: #4f4f4f;
-}
+} 
+
 .eventInfo {
   grid-area: eventInfo;
-  background: #edf05a;
+  line-height: 30px;
 }
-.eventInfo h3, p {
-  margin: .3rem;
+.eventInfo h2, p {
+  vertical-align: middle;
+  margin: 0;
   padding: 0%;
 }
 .sumPrice {
   grid-area:sumPrice ;
-  background: #47e9e9;
+  font-size: 2.5rem;
+  margin-top: 30px;
+  border: 1px solid #F56B9A;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .amountMinus {
   grid-area: amountMinus;
-  background: #13721f;
+  border: 1px solid #F56B9A;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 30px;
+
 }
 .amount {
   grid-area: amount;
-  background: #3d0742;
+    border: 1px solid #F56B9A;
+
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 30px;
 }
 .amountPlus {
   grid-area: amountPlus;
-  background: #2df105;
+  border: 1px solid #F56B9A;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 30px;
+
  
 }
 .btnBuy {
   grid-area: btnBuy;
-  background: #fc0000;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-button {
-  font-size: 3rem;
-}
+
 .btn {  
   display: flex;
   justify-content: center;
@@ -109,10 +113,30 @@ button {
   width: 90%;
   height: 90%;
   border-radius: 15px;
-  background-color: deeppink;
+  background-color: #F56B9A;
   text-decoration: none;
- color: #ffffff;
+  color: #ffffff;
   font-size: 2rem;
 }
-
+h1 {
+  font-size:2.5rem;
+  margin-top: 0;
+  margin-bottom: .5rem;
+}
+h1, h2 {
+  color: #F56B9A;
+}
+p {
+  color: #ffffff;
+}
+h4 {
+  color: #ffffff;
+  font-size: 2rem;
+}
+a {
+  text-decoration: none;
+}
+#date {
+  color:#37AEAB;
+}
 </style>
