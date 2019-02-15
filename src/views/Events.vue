@@ -2,7 +2,7 @@
   <div class="events">
     <section class="event-title">Events</section>
     <section class="event-search">
-      <span class="fa fa-search" style="top: 1.9rem; left: 0.7rem; float: left; color: rgba(255, 255, 255, 0.2);"></span>
+      <span class="fa fa-search" style="top: 1.8rem; left: 0.7rem; float: left; color: rgba(255, 255, 255, 0.2);"></span>
       <input type="text">
     </section>
     <section class="event-list">
@@ -21,6 +21,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'events',
 }
