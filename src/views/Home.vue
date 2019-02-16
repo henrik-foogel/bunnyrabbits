@@ -10,6 +10,14 @@
     <section class="tagLine">
     <h2>Ticketing made easy..</h2>
     </section>
+    <!-- Tillfäliga länkar under dev. -->
+          <router-link to="/Admin">Admin!</router-link>
+          <router-link to="/Events-Data">Events-Data!</router-link>
+          <router-link to="/Events">Events!</router-link>
+          <router-link to="/Home">Home!</router-link>
+          <router-link to="/Staff">Staff!</router-link>
+          <router-link to="/Tickets">Tickets!</router-link>
+    <!-- -->
   </div>
 </template>
 

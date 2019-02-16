@@ -8,12 +8,11 @@
   </div>
 </template>
 
-<style>
+<style >
 
 body {
   margin: 1rem 0;
-  /*background-color: #231F42;*/
-      background-color: rgb(255, 189, 65);
+  background-color: #231F42;
 
 }
 
