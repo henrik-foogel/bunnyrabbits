@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <section class="img">
-    <img src="../assets/logo.svg" alt="">
+    <img src="../assets/logo.svg" alt="logo">
     </section>
     <section class="name">
       <router-link class="link" to="/Buy"><h1> Were it´s @!</h1></router-link>

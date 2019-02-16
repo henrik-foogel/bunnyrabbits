@@ -25,6 +25,16 @@ export default new Router({
       path: '/tickets',
       name: 'tickets',
       component: () => import('./views/Tickets.vue')
+    },
+    {
+      path: '/staff',
+      name: 'staff',
+      component: () => import('./views/Staff.vue')
+    },
+    {
+      path: '/admin',
+      name: 'admin',
+      component: () => import('./views/Admin.vue')
     }
   ]
 })

@@ -12,14 +12,15 @@
 
 body {
   margin: 1rem 0;
-  background-color: #231F42;
+  /*background-color: #231F42;*/
+      background-color: rgb(255, 189, 65);
+
 }
 
 #app {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #231F42;
   text-align: center;
   min-height: 568px;
   width: 100%;
