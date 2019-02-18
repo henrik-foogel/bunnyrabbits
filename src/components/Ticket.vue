@@ -1,29 +1,28 @@
 <template>
-<div>
-  <ticket v-for="ticket in tickets" :key="ticket.id" :ticket="ticket"></ticket>
-
-  </div>
+<article class="ticket">
+    <section class="what">{{ ticket }}</section>
+    <section class="where">{{ ticket }}</section>
+    <section class="when">{{ ticket }}</section>
+    <section class="from">{{ ticket }}</section>
+    <section class="to">{{ ticket }}</section>
+    <section class="info">{{ ticket }}</section>
+    <section class="code">{{ ticket }}</section>
+  </article>
 </template>
 
 <script>
-import ticket from '@/components/Ticket';
-
 export default {
-  name: 'tickets',
-  components: {
-    ticket
-  },
-  computed: {
-    tickets(){
-      return this.$store.state.tickets
+    name: 'ticket',
+    props: ['ticket'],
+    methods: {
     }
-  }
 }
 </script>
 
 <style scoped>
 .tickets {
-  max-width: 17rem;
+  color: white;
+  max-width: 19rem;
   width: 100%;
   background: green;
   display: grid;

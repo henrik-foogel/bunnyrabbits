@@ -20,23 +20,34 @@
     </section>
     
     <section class="btnBuy">
-      <router-link class="btn" to="/#">Boka!</router-link>
+      <div class="btn" @click="buy(event)">Boka!</div>
     </section>
   </div>
 </template>
 
 <script>
 export default {
-
+  name: 'buy',
+  data() {
+    return {
+      amount: 1
+    }
+  },
   computed: {
     event() {
+      console.log(this.$store.state.event)
       var id = this.$route.params.id;
-        return this.$store.state.events.find(function(event) {
+        return this.$store.state.events.find(function(event) {          
           return event._id == id
         })
-    }
+    },
+  },
+  methods: {
+    buy() {
+        this.$store.dispatch('addTicket', { event: this.event._id, amount: this.amount });
+        this.$router.push({name: 'tickets'})
+      }
   }
-
 }
 </script>
 

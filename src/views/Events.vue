@@ -24,9 +24,6 @@ export default {
       return this.$store.state.events
     }
   },
-  beforeMount() {
-   this.$store.dispatch('getEvents');
-  },
 }
 </script>
 

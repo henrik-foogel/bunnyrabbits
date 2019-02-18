@@ -6,9 +6,7 @@
             <p>{{ event.date.month }}</p>
         </div>
         <div class="event-list-event">
-            <router-link :to="{ name: 'buy', params: {id:event._id} }">
-              <h1>{{ event.name }}</h1>
-            </router-link>
+              <h1 @click="setEvent(event)">{{ event.name }}</h1>
             <p>{{ event.where }}</p>
             <span class="event-list-event-span-one">{{ event.when.from }} - {{ event.when.to }}</span>
             <span class="event-list-event-span-two">{{ event.price }} sek</span>
@@ -22,6 +20,11 @@ export default {
     name: 'event',
     props: ['event'],
     methods: {
+      setEvent(event) {
+        console.log(event)
+        this.$store.commit('selectedEvent', event)
+        this.$router.push({ name: 'buy', params: {id:event._id} })
+      }
     }
 }
 </script>
