@@ -58,7 +58,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 @import url('https://fonts.googleapis.com/css?family=Sansita+One');
 @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans');
@@ -99,7 +99,6 @@ export default {
     left: 32px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 3px;
-    padding-left: 2.5rem;
     color: #fff;
     font-size: 20px;
   }
