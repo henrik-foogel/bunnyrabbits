@@ -1,12 +1,12 @@
 <template>
 <article class="ticket">
-    <section class="what">{{ ticket }}</section>
-    <section class="where">{{ ticket }}</section>
-    <section class="when">{{ ticket }}</section>
-    <section class="from">{{ ticket }}</section>
-    <section class="to">{{ ticket }}</section>
-    <section class="info">{{ ticket }}</section>
-    <section class="code">{{ ticket }}</section>
+    <section class="what">{{ticket.event.name}}</section>
+    <section class="where">where</section>
+    <section class="when">when</section>
+    <section class="from">from</section>
+    <section class="to">to</section>
+    <section class="info">info</section>
+    <section class="code">code</section>
   </article>
 </template>
 

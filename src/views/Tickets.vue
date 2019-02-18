@@ -1,6 +1,6 @@
 <template>
 <div>
-  <ticket v-for="ticket in tickets" :key="ticket.id" :ticket="ticket"></ticket>
+  <ticket v-for="ticket in tickets" :key="ticket.code" :ticket="ticket"></ticket>
 
   </div>
 </template>
@@ -17,12 +17,18 @@ export default {
     tickets(){
       return this.$store.state.tickets
     }
+  },
+  beforeMount() {
+    console.log(this.$store.state.tickets)
+    if(localStorage.getItem('tickets')){
+      this.$store.dispatch('getTickets')
+    }
   }
 }
 </script>
 
 <style scoped>
-.tickets {
+/*.tickets {
   max-width: 17rem;
   width: 100%;
   background: green;
@@ -62,5 +68,5 @@ export default {
 .code {
   grid-area: code;
   background: #577657;
-}
+}*/
 </style>

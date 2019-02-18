@@ -33,7 +33,6 @@ export default {
   },
   computed: {
     event() {
-      console.log(this.$store.state.event)
       var id = this.$route.params.id;
         return this.$store.state.events.find(function(event) {          
           return event._id == id
@@ -42,6 +41,7 @@ export default {
   },
   methods: {
     buy() {
+        console.log(this.event._id + " " + this.amount)
         this.$store.dispatch('addTicket', { event: this.event._id, amount: this.amount });
         this.$router.push({name: 'tickets'})
       },
