@@ -1,7 +1,6 @@
 <template>
   <div class="buy">
     <section class="heading">
-   <!-- <h1>Kassa</h1> -->
     <p>Du köper biljetter till följande evenimang:</p>
     </section>
     <section class="eventInfo">
@@ -10,15 +9,14 @@
       <p> {{ event.where }}</p>
     </section>
 
-    <section class="sumPrice"><h4>{{ event.price }} SEK</h4></section>
-    <section class="amountMinus">
-      <a href="to/#"><h4>-</h4></a>
+    <section class="sumPrice"><h4>{{  amount * event.price }} SEK</h4></section>
+    <section class="amountMinus" @click="removeTickets">
+      <span><h1>-</h1></span>
     </section>
-    <section class="amount"> <h4>3</h4></section>
-    <section class="amountPlus">
-      <a href="to/#"><h4>+</h4></a>
+    <section class="amount"><h2>{{ amount }}</h2></section>
+    <section class="amountPlus"  @click="addTickets">
+     <span><h1>+</h1></span>
     </section>
-    
     <section class="btnBuy">
       <div class="btn" @click="buy(event)">Boka!</div>
     </section>
@@ -46,7 +44,13 @@ export default {
     buy() {
         this.$store.dispatch('addTicket', { event: this.event._id, amount: this.amount });
         this.$router.push({name: 'tickets'})
-      }
+      },
+    addTickets() {
+      this.amount++
+    },
+    removeTickets(){
+      this.amount--
+    }
   }
 }
 </script>
@@ -98,16 +102,19 @@ export default {
   justify-content: center;
   align-items: center;
   margin-bottom: 30px;
-
+  color: #ffffff;
+  cursor: pointer;
 }
 .amount {
   grid-area: amount;
-    border: 1px solid #F56B9A;
-
+  border: 1px solid #F56B9A;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 30px;
+}
+.amount h2 {
+  color: #ffffff;
 }
 .amountPlus {
   grid-area: amountPlus;
@@ -116,8 +123,8 @@ export default {
   justify-content: center;
   align-items: center;
   margin-bottom: 30px;
-
- 
+  color: #ffffff;
+  cursor: pointer;
 }
 .btnBuy {
   grid-area: btnBuy;
@@ -143,9 +150,10 @@ h1 {
   margin-top: 0;
   margin-bottom: .5rem;
 }
-h1, h2 {
+.eventInfo h1, h2 {
   color: #F56B9A;
 }
+
 p {
   color: #ffffff;
 }
@@ -153,7 +161,7 @@ h4 {
   color: #ffffff;
   font-size: 2rem;
 }
-a {
+span {
   text-decoration: none;
 }
 #date {

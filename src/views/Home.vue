@@ -12,7 +12,7 @@
     </section>
     <!-- Tillfäliga länkar under dev. -->
           <router-link to="/Admin">Admin!</router-link>
-          <router-link to="/Events-Data">Events-Data!</router-link>
+          <router-link to="/Buy">Buy!</router-link>
           <router-link to="/Events">Events!</router-link>
           <router-link to="/Home">Home!</router-link>
           <router-link to="/Staff">Staff!</router-link>
