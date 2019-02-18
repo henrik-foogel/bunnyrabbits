@@ -8,6 +8,15 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: 'App',
+  beforeMount() {
+    this.$store.dispatch('getEvents');
+  }
+}
+</script>
+
 <style>
 
 body {

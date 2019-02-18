@@ -1,29 +1,60 @@
 <template>
-  <div class="events">
+  <main class="events">
     <section class="event-title">Events</section>
     <section class="event-search">
       <span class="fa fa-search" style="top: 1.8rem; left: 0.7rem; float: left; color: rgba(255, 255, 255, 0.2);"></span>
       <input type="text">
     </section>
-    <section class="event-list">
-      <div class="event-list-date">
-            <h1>18</h1>
-            <p>JUL</p>
-        </div>
-        <div class="event-list-event">
-            <h1>John Carpenter</h1>
-            <p>Scandinavium</p>
-            <span class="event-list-event-span-one">20.00 - 22.00</span>
-            <span class="event-list-event-span-two">350 sek</span>
-        </div>
+    <section>
+      <event v-for="event in eventList" :key="event.id" :event="event"/>
     </section>
-  </div>
+  </main>
 </template>
 
 <script>
+import event from '@/components/Event';
 
 export default {
   name: 'events',
+  components: {
+    event
+  }, 
+  computed: {
+    eventList() {
+      let list = {"events": [
+      {   "id": 1,
+          "name": "Iron Maiden",
+          "where": "Ullevi",
+          "when":{
+              "from": "21:00",
+              "to": "23:00"
+          },
+          "date":{
+              "month": "JUN",
+              "day": "21"
+          },
+          "price": 850
+      },
+      {   "id": 2,
+          "name": "John Carpenter",
+          "where": "Scandinavium",
+          "when":{
+              "from": "20:00",
+              "to": "22:00"
+          },
+          "date":{
+              "month": "JUL",
+              "day": "18"
+          },
+          "price": 350
+      }
+      ]}
+      return list.events
+    }
+  },
+  beforeMount() {
+   this.$store.dispatch('getEvents');
+  },
 }
 </script>
 
@@ -31,7 +62,9 @@ export default {
 @import url('https://fonts.googleapis.com/css?family=Sansita+One');
 @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans');
+
   .events {
+    font-family: 'Sansita One';
     max-width: 20rem;
     width: 100%;
     height: 50rem;
@@ -50,7 +83,8 @@ export default {
     font-size: 32px;
     text-align: center;
     color: #F56B9A;
-    margin-top: 3rem;
+    margin-top: 2rem;
+    bottom: 0;
   }
   .event-search {
     grid-area: event-search;
@@ -65,8 +99,11 @@ export default {
     left: 32px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 3px;
+    padding-left: 2.5rem;
+    color: #fff;
+    font-size: 20px;
   }
-  .event-list {
+  /*.event-list {
     font-family: Fira Sans;
     grid-area: event-list;
     max-width: 20rem;
@@ -134,5 +171,5 @@ export default {
     color:#37AEAB;
     float: right;
     font-weight: bold;
-  }
+  }*/
 </style>
