@@ -6,7 +6,9 @@
             <p>{{ event.date.month }}</p>
         </div>
         <div class="event-list-event">
-            <h1>{{ event.name }}</h1>
+            <router-link :to="{ name: 'buy', params: {id:event._id} }">
+              <h1>{{ event.name }}</h1>
+            </router-link>
             <p>{{ event.where }}</p>
             <span class="event-list-event-span-one">{{ event.when.from }} - {{ event.when.to }}</span>
             <span class="event-list-event-span-two">{{ event.price }} sek</span>

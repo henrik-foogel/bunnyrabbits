@@ -21,35 +21,7 @@ export default {
   }, 
   computed: {
     eventList() {
-      let list = {"events": [
-      {   "id": 1,
-          "name": "Iron Maiden",
-          "where": "Ullevi",
-          "when":{
-              "from": "21:00",
-              "to": "23:00"
-          },
-          "date":{
-              "month": "JUN",
-              "day": "21"
-          },
-          "price": 850
-      },
-      {   "id": 2,
-          "name": "John Carpenter",
-          "where": "Scandinavium",
-          "when":{
-              "from": "20:00",
-              "to": "22:00"
-          },
-          "date":{
-              "month": "JUL",
-              "day": "18"
-          },
-          "price": 350
-      }
-      ]}
-      return list.events
+      return this.$store.state.events
     }
   },
   beforeMount() {
@@ -101,6 +73,8 @@ export default {
     border-radius: 3px;
     color: #fff;
     font-size: 20px;
+    padding-left: 2.3rem;
+    max-width: -webkit-fill-available;
   }
   /*.event-list {
     font-family: Fira Sans;

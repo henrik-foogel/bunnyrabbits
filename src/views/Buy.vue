@@ -5,12 +5,12 @@
     <p>Du köper biljetter till följande evenimang:</p>
     </section>
     <section class="eventInfo">
-      <h2>Bamse på turné</h2> 
-      <p id="date">16 NOV lör - 14:00</p>
-      <p> @Scandinavium</p>
+      <h2>{{ event.name }}</h2> 
+      <p id="date">{{ event.date.day }} {{ event.date.month }} {{ event.when.from }}</p>
+      <p> {{ event.where }}</p>
     </section>
 
-    <section class="sumPrice"><h4>999:-</h4></section>
+    <section class="sumPrice"><h4>{{ event.price }} SEK</h4></section>
     <section class="amountMinus">
       <a href="to/#"><h4>-</h4></a>
     </section>
@@ -27,6 +27,15 @@
 
 <script>
 export default {
+
+  computed: {
+    event() {
+      var id = this.$route.params.id;
+        return this.$store.state.events.find(function(event) {
+          return event._id == id
+        })
+    }
+  }
 
 }
 </script>

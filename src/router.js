@@ -17,7 +17,7 @@ export default new Router({
       component: () => import('./views/Events.vue')
     },
     {
-      path: '/buy',
+      path: '/buy/:id',
       name: 'buy',
       component: () => import('./views/Buy.vue')
     },
