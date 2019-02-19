@@ -144,6 +144,7 @@ export default {
   text-decoration: none;
   color: #ffffff;
   font-size: 2rem;
+  cursor: pointer;
 }
 h1 {
   font-size:2.5rem;
