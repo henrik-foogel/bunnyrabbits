@@ -1,12 +1,11 @@
 <template>
 <article class="ticket">
-    <section class="what"><h3 class="rubrik">Evenemang: <br> {{ticket.event.name}}</h3></section>
-    <section class="where"><h3 class="rubrik">Vart: <br> {{ticket.event.where}}</h3></section>
-    <section class="date"><h3 class="rubrik">Datum: <br> {{ticket.event.date.month}} / {{ticket.event.date.day}}</h3></section>
-    <section class="from"><h3 class="rubrik">Börjar: <br> {{ticket.event.when.from}}</h3></section>
-    <section class="to"><h3 class="rubrik">Slutar: <br> {{ticket.event.when.to}}</h3></section>
-    <section class="price"><h3 class="rubrik">Pris: <br>{{ticket.event.price}}:-</h3></section>
-    <section class="code"><h3 class="rubrik">Vertifiering code:</h3><h3 id="barcode"> <br> {{ticket.code}}</h3></section>
+    <section class="what"><h3>Evenemang: <br> {{ticket.event.name}}</h3></section>
+    <section class="where"><h3>Vart: <br> {{ticket.event.where}}</h3></section>
+    <section class="date"><h3>Datum: <br> {{ticket.event.date.month}} / {{ticket.event.date.day}}</h3></section>
+    <section class="time"><h3>Tid: <br> {{ticket.event.when.from}} - {{ticket.event.when.to}}</h3></section>
+    <section class="price"><h3>Pris: <br>{{ticket.event.price}}:-</h3></section>
+    <section class="code"><h3>Vertifiering code:</h3><h3 id="barcode"> <br> {{ticket.code}}</h3></section>
   </article>
 </template>
 
@@ -28,7 +27,8 @@ export default {
       color: #000;
       max-width: 20rem;
       width: 100%;
-      background: green;
+      background: whitesmoke;
+      border: 2px solid black;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-rows: 60px 60px 60px 60px 60px 120px;
@@ -36,7 +36,7 @@ export default {
       "what what what"
       "where where where"
       "date date date"
-      "from . to"
+      "time time time"
       "price price price"
       "code code code";
 
@@ -45,31 +45,30 @@ export default {
       }
       .what {
       grid-area: what;
-      background: #9c0808;
+       border: 1px solid black;
+       background: rgb(136, 135, 135);
       }
       .where {
       grid-area: where;
-      background: #577657;
+      border: 1px solid black;
       }
       .date {
-        grid-area: date;
-        background: hotpink;
+      grid-area: date;
+      border: 1px solid black;
+      border-bottom: 0px;
       }
-      .from {
-      grid-area: from;
-      background: #989898;
-      }
-      .to {
-      grid-area: to;
-      background: #1122dd;
+      .time {
+      grid-area: time;
+      border: 2px solid black;
       }
       .price {
-        grid-area: price;
-        background: saddlebrown;
+      grid-area: price;
+      border: 1px solid black;
+      border-top: 0px;
       }
       .code {
       grid-area: code;
-      background: #9c0808;
+      border: 1px solid black;
 
       #barcode {
       font-family: barCode;
