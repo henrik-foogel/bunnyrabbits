@@ -1,8 +1,8 @@
 <template>
-<div>
+<main>
   <ticket v-for="ticket in tickets" :key="ticket.code" :ticket="ticket"></ticket>
 
-  </div>
+  </main>
 </template>
 
 <script>
