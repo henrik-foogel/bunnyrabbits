@@ -1,13 +1,14 @@
-
 <template>
     <main id="admin">
         <section class="container">
             <table cellspacing="0">
                 <thead>
-                    <tr>Name</tr>
-                    <tr>Where</tr>
-                    <tr>Tickets available</tr>
-                    <tr>Tickets sold</tr>
+                    <tr>
+                        <th>Name:</th>
+                        <th>Where:</th>
+                        <th>Tickets available:</th>
+                        <th>Tickets sold:</th>
+                    </tr>
                 </thead>
                 <tbody>
                     <tr v-for="event in events" :key="event._id">
@@ -77,71 +78,71 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
-  #admin {
-
-    background: darkblue;
+#admin {
+    background-color: #231F42;
     display: flex;
     justify-content: center;
 
-    /*.logo {
+    .logo {
         position: fixed;
-        margin: 1rem;
-        width: 2rem;
-    }*/
+        margin: 2rem;
+        left: 10px;
+        top: 20px;
+    }
+    
 
     .container {
         display: grid;
         grid-template-columns: 4fr 1fr;
         max-width: 1000px;
         width: 100%;
-        color: white;
+        color:#fff;
 
         table {
-            background: #000;
+            background: rgba($color: #000000, $alpha: 0.3);
             padding: 1rem;
+            text-align: left;
 
-            thead {
-                tr {
-                    th {
-                        color:palegreen;
-                        text-align: left;
-                        border-bottom: 1px solid rgb(121, 0, 105);
-                    }
-                }
-            }
-
-            tbody {
-                tr {
-                    td {
-                        color:peachpuff;
-                    }
-
-                    /*&:nth-child (2n) {
-                        background: rbga;
-                    }*/
+        thead {
+            tr {
+                th {
+                    color:rosybrown;
+                    border-bottom: 1px solid #fff;
+                    padding:1rem 0px;
                 }
             }
         }
+        tbody {
+            tr {
+                td {
+                     color: rgba($color: #fff, $alpha: 0.8);
+                }
+                &:nth-child(2n){
+                    background:  #ffffff10;
+                }
+            }
+        }
+        }
 
-        form {
-            background: #fff;
+        .form {
+            background: rgba($color: #000000, $alpha: 0.3);
             padding: 1rem;
-            
+
             input {
                 width: 100%;
                 background: none;
                 border: 1px solid #fff;
-                border-radius: 3px;
+                border-radius: 4px;
                 padding: .25rem;
                 font-size: 1.2rem;
-                color: #fff;
-                margin: 0 0 1rem 0;
+                color:#fff;
+                margin: 0 0 1rem 0; 
             }
+
         }
     }
-  }
-
+}
 
 </style>

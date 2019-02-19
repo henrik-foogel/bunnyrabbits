@@ -43,6 +43,7 @@ export default {
     display: grid;
     grid-template-columns: 22% 78%;
     grid-template-rows: 70px;
+    cursor: pointer;
     color: #FFFFFF;
     grid-template-areas: "event-list-date event-list-event"
   }
