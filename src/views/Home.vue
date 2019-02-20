@@ -34,7 +34,6 @@ export default {
 @import '../scss/variable';
 
 body {
-    background-color:$orange !important;
     overflow: hidden;
 }
   .home {

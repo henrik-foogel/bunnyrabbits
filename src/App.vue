@@ -22,7 +22,6 @@ export default {
 @import './scss/variable';
 body {
     background-color:$main_bg !important;
-    overflow: hidden;
     margin: 1rem 0;
 }
 

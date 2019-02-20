@@ -58,7 +58,9 @@ export default {
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css?family=Sansita:400,800i");
 @import '../scss/variable';
-
+body {
+    overflow: hidden;
+}
   .buy {
     font-family: 'Sansita', sans-serif;
     max-width: 18rem;
