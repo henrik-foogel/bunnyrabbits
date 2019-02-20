@@ -98,37 +98,41 @@ export default {
         grid-template-columns: 4fr 1fr;
         max-width: 1000px;
         width: 100%;
-        color:#fff;
+                font-size: 1.5rem;
+                color:#fff;
 
         table {
             background: rgba($color: #000000, $alpha: 0.3);
             padding: 1rem;
             text-align: left;
+            padding: 1.5rem;
 
-        thead {
-            tr {
-                th {
-                    color:rosybrown;
-                    border-bottom: 1px solid #fff;
-                    padding:1rem 0px;
+            thead {
+                tr {
+                    th {
+                        color:rosybrown;
+                        border-bottom: 1px solid #fff;
+                        padding:1rem 0px;
+                    }
                 }
             }
-        }
-        tbody {
-            tr {
-                td {
-                     color: rgba($color: #fff, $alpha: 0.8);
-                }
-                &:nth-child(2n){
-                    background:  #ffffff10;
+            tbody {
+                tr {
+                    td {
+                        color: rgba($color: #fff, $alpha: 0.8);
+                    }
+                    &:nth-child(2n){
+                        background:  #ffffff10;
+                    }
                 }
             }
-        }
         }
 
         .form {
+            padding: 1.5rem 2rem 1.5rem 1.5rem;
             background: rgba($color: #000000, $alpha: 0.3);
-            padding: 1rem;
+            margin: 0 1rem;
+            width: 10rem;
 
             input {
                 width: 100%;
@@ -136,9 +140,8 @@ export default {
                 border: 1px solid #fff;
                 border-radius: 4px;
                 padding: .25rem;
-                font-size: 1.2rem;
-                color:#fff;
                 margin: 0 0 1rem 0; 
+                color: #fff;
             }
 
         }
