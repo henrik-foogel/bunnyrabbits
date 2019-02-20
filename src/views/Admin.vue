@@ -24,6 +24,8 @@
                 <input type="text" placeholder="event location" v-model="newEvent.where">
                 <input type="text" placeholder="event start time" v-model="newEvent.when.from">
                 <input type="text" placeholder="event end time" v-model="newEvent.when.to">
+                <input type="text" placeholder="event month" v-model="newEvent.date.month">
+                <input type="text" placeholder="event day" v-model="newEvent.date.day">
                 <input type="number" placeholder="price" v-model="newEvent.price">
                 <input type="number" placeholder="total tickets" v-model="newEvent.tickets.available">
                 <a href="#" class="btn" @click="createEvent">Create event</a>
