@@ -38,15 +38,16 @@ export default new Vuex.Store({
     },
     async addTicket(ctx, buyData) {
       let tickets = await axios.post('http://localhost:3000/tickets', buyData)
-      console.log(buyData)
       ctx.commit('setTickets', tickets.data)
       localStorage.setItem('tickets', JSON.stringify(tickets.data))
     },
-    getTickets(ctx) {
-      let tickets = localStorage.getItem('tickets')
-      let t = (JSON.parse(tickets));
-      console.log(t[0].event._id);
-      ctx.commit('setTickets', t)
+    async getTickets(ctx) {
+      for(let i = 0; i <= 60; i++){
+        
+        let tickets = await localStorage.getItem(`tickets`)
+        let t = (JSON.parse(tickets));
+        ctx.commit('setTickets', t)
+      }
     }
   },
 })

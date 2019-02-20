@@ -1,12 +1,12 @@
 <template>
-<article class="event">
+<article @click="setEvent(event)" class="event">
     <section class="event-list">
       <div class="event-list-date">
             <h1>{{ event.date.day }}</h1>
             <p>{{ event.date.month }}</p>
         </div>
         <div class="event-list-event">
-              <h1 @click="setEvent(event)">{{ event.name }}</h1>
+              <h1>{{ event.name }}</h1>
             <p>{{ event.where }}</p>
             <span class="event-list-event-span-one">{{ event.when.from }} - {{ event.when.to }}</span>
             <span class="event-list-event-span-two">{{ event.price }} sek</span>

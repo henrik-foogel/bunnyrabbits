@@ -8,7 +8,10 @@
       <p id="date">{{ event.date.day }} {{ event.date.month }} {{ event.when.from }}</p>
       <p> {{ event.where }}</p>
     </section>
-
+    
+    <section class="ticketsAvailable">
+      <div><h3>Tickets available: <br> {{ event.tickets.available }}</h3></div>
+    </section>
     <section class="sumPrice"><h4>{{  amount * event.price }} SEK</h4></section>
     <section class="amountMinus" @click="removeTickets">
       <span><h1>-</h1></span>
@@ -41,9 +44,12 @@ export default {
   },
   methods: {
     buy() {
-        console.log(this.event._id + " " + this.amount)
-        this.$store.dispatch('addTicket', { event: this.event._id, amount: this.amount });
-        this.$router.push({name: 'tickets'})
+        if (this.event.tickets.available >= this.amount && this.amount > 0) {
+          this.$store.dispatch('addTicket', { event: this.event._id, amount: this.amount });
+          this.$router.push({name: 'tickets'})
+        } else {
+          console.log("No tickets for you!")
+        }
       },
     addTickets() {
       this.amount++
@@ -64,10 +70,11 @@ export default {
     width: 100%;
     display: grid;
     grid-template-columns:  repeat(3, 1fr);
-    grid-template-rows: 90px 120px 120px 90px auto ;
+    grid-template-rows: 90px 120px 50px 120px 90px auto ;
     grid-template-areas:
     "heading heading heading"
     "eventInfo eventInfo eventInfo"
+    "ticketsAvailable ticketsAvailable ticketsAvailable"
     "sumPrice sumPrice sumPrice"
     "amountMinus amount amountPlus"
     "btnBuy btnBuy btnBuy"
@@ -86,6 +93,18 @@ export default {
   margin: 0;
   padding: 0%;
 }
+.ticketsAvailable {
+  grid-area: ticketsAvailable;
+  color: #fff;
+}
+.ticketsAvailable div {
+  vertical-align: middle;
+}
+.ticketsAvailable div h3 {
+  margin: 0;
+  padding: 0;
+}
+
 .sumPrice {
   grid-area:sumPrice ;
   font-size: 2.5rem;
