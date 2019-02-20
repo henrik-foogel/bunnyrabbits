@@ -1,19 +1,20 @@
 <template>
-    <div class="staff">
+    <main id="staff">
         <section class="logo">
             <img  id="small" src="../assets/logo.svg" alt="logo">
             <p>staff</p>
         </section>
         <section class="img">
-            <img  class="pass" src="../assets/pass.jpg" alt="stiffler tumbs up">
+            <img v-if="!doStuff" class="pass" src="../assets/pass.jpg" alt="stiffler tumbs up">
+          <!--  <img v-if="doStuff" class="pass" src="../assets/fail.png" alt="stiffler tumbs up"> -->
         </section>
         <section class="input">
             <input type="text" name="vertify" id="">
         </section>
         <section class="btn">
-            <button>Vertify ticket!</button>
+            <button @click="doStuff">Vertify ticket!</button>
         </section>
-    </div>
+    </main>
 </template>
 
 <script>
@@ -22,17 +23,22 @@ export default {
 }
 </script>
 
- <style scoped>
+ <style lang="scss" coped>
+ @import '../scss/variable';
  @import url('https://fonts.googleapis.com/css?family=Fira+Sans');
 
  /* Kanske onödigt att ha grid när ändå allt bara ska ligga påvaranndra, men övning ger färdighet, så vi kör på de ändå!*/
-  .staff {
-    background-color: rgb(255, 189, 65);
+  body {
+
+     background-color:$orange;
+ }
+
+ #staff {
     max-width: 20rem;
     width: 100%;
     height: 30rem;
     display: grid;
-    grid-template-rows: 210px 210px 90px 60px;
+    grid-template-rows: 180px 180px 90px 90px;
     grid-template-areas:
      "logo"
     "img"
