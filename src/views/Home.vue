@@ -29,9 +29,14 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css?family=Sansita:400,800i");
+@import '../scss/variable';
 
+body {
+    background-color:$orange !important;
+    overflow: hidden;
+}
   .home {
     margin: 2rem 0;
     font-family: 'Sansita', sans-serif;

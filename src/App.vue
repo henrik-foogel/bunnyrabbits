@@ -17,12 +17,13 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 
+@import './scss/variable';
 body {
-  margin: 1rem 0;
-  background-color: #231F42;
-
+    background-color:$main_bg !important;
+    overflow: hidden;
+    margin: 1rem 0;
 }
 
 #app {

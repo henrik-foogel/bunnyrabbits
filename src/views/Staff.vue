@@ -23,21 +23,21 @@ export default {
 }
 </script>
 
- <style lang="scss" coped>
+ <style lang="scss">
  @import '../scss/variable';
  @import url('https://fonts.googleapis.com/css?family=Fira+Sans');
 
  /* Kanske onödigt att ha grid när ändå allt bara ska ligga påvaranndra, men övning ger färdighet, så vi kör på de ändå!*/
 body {
-    background-color:$orange;
+    background-color:$orange !important;
     overflow: hidden;
  
-        #staff {
+    #staff {
             max-width: 20rem;
             width: 100%;
             height: 30rem;
             display: grid;
-            grid-template-rows: 180px 180px 90px 90px;
+            grid-template-rows: 150px 180px 90px 90px;
             grid-template-areas:
             "logo"
             "img"
@@ -57,23 +57,22 @@ body {
             letter-spacing: 0.3em;
         }  
         #small {
-            width: 8rem;
+            width: 5rem;
         }
-        }
+    }
     .img {
         grid-area: img;
         display: flex;
         justify-content: center;
         align-items: center;
-        }  
-    .pass {
-        width: 10rem;
+        .pass {
+            width: 10rem;
         border-radius: 50%;
-        }
+        }  
+    }
     .input {
         grid-area: input;
         border: 2px solid #231F42;
-        } 
         input {
             width: 99%;
             height: 100%;
@@ -83,8 +82,8 @@ body {
             letter-spacing: .2em;
             color: #000;
             text-align: center;
-        }
-
+        } 
+    }
     .btn  {
         grid-area: btn;
 
