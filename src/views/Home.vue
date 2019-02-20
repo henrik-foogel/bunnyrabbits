@@ -45,7 +45,8 @@ export default {
      "name"
     "tagLine"
     }
-      .img {
+    
+  .img {
   grid-area: img;
 } 
   .name {

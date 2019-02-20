@@ -36,6 +36,9 @@
 import axios from 'axios'
 export default {
     name: 'admin',
+    beforeMount() {
+        this.$store.dispatch('getEvents');
+    },
     data() {
         return {
             newEvent: {
@@ -60,9 +63,7 @@ export default {
     methods: {
         async createEvent() {
 
-            let resp = await axios.post('http://localhost:3000/events', this.newEvent)
-            console.log(resp);
-
+            this.$store.dispatch('createEvents', this.newEvent);
             this.$store.dispatch('getEvents');
 
         }
@@ -71,9 +72,6 @@ export default {
         events() {
             return this.$store.state.events;
         }
-    },
-    beforeMount() {
-        this.$store.dispatch('getEvents');
     }
 }
 </script>

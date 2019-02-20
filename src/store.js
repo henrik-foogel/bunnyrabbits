@@ -21,7 +21,17 @@ export default new Vuex.Store({
       state.tickets = tickets
     } 
   },
-  actions: {
+  actions: { 
+    async createEvents(ctx, event) {
+      try{
+        await axios.post('http://localhost:3000/events', event);
+        
+        ctx.dispatch('getEvents');
+
+      } catch (err) {
+          console.error(err.stack);
+      }
+    },
     async getEvents(ctx) {
       let events = await axios.get('http://localhost:3000/events')
       ctx.commit('setEvents', events.data)
