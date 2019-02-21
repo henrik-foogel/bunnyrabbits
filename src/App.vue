@@ -34,6 +34,7 @@ body {
   width: 100%;
 }
 
+
 .fade-enter-active,
 .fade-leave-active {
   transition-duration: 0.3s;

@@ -7,6 +7,7 @@
     </section>
     <section class="name">
       <router-link class="link" to="/Events"><h1> Were it´s @!</h1></router-link>
+    
     </section>
     <section class="tagLine">
     <h2>Ticketing made easy..</h2>
@@ -73,7 +74,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
+  width: 100%;
+  height: 30px;
+  padding: 1rem  0;
+  z-index: 10;
+  bottom: 0px;
+  background: $main_bg;
 }
 h1{
   font-family: 'Sansita', sans-serif;

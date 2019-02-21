@@ -1,7 +1,7 @@
 <template>
     <footer id="dot">
         <ul>
-            <li v-for="(dot, index) in dots" :key="index" :class="{ active : dots == currentDot}"></li>
+            <li v-for="(dot, index) in dots" :key="index" :class="{ active : dot == currentDot}"></li>
         </ul>
     </footer>
 </template>
@@ -24,6 +24,7 @@ export default {
 
     #dot {
         display: flex;
+        
 
         ul {
             flex: 1;
@@ -41,6 +42,7 @@ export default {
             
                 &.active {
                     background: white;
+                    transform: scale(1.5);
                 }
             }
         }
