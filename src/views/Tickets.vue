@@ -1,6 +1,6 @@
 <template>
 <main>
-  <ticket v-for="ticket in tickets" :key="ticket.code" :ticket="ticket"></ticket>
+  <ticket v-for="ticket in tickets[0]" :key="ticket.code" :ticket="ticket"></ticket>
 
   </main>
 </template>
@@ -19,8 +19,10 @@ export default {
     }
   },
   beforeMount() {
-    if(localStorage.getItem('tickets')){
-      this.$store.dispatch('getTickets')
+    for(let i = 0; i <= 60; i++){
+      if(localStorage.getItem('tickets'+i)){
+        this.$store.dispatch('getTickets', i)
+      }
     }
   }
 }
