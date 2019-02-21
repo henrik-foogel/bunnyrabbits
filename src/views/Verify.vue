@@ -1,25 +1,41 @@
 <template>
-    <main id="staff">
+    <main id="verify">
         <section class="logo">
             <img  id="small" src="../assets/logo.svg" alt="logo">
             <p>staff</p>
         </section>
-        <section class="img">
-            <img v-if="!doStuff" class="pass" src="../assets/pass.jpg" alt="stiffler tumbs up">
-          <!--  <img v-if="doStuff" class="pass" src="../assets/fail.png" alt="stiffler tumbs up"> -->
+        <section class="img" v-if="verify">
+            <img v-if="verify.verified" class="pass" src="../assets/pass.jpg" alt="stiffler tumbs up">
+            <img v-if="!verify.verified" class="pass" src="../assets/fail.png" alt="stiffler finger!"> 
         </section>
         <section class="input">
-            <input type="text" name="vertify" id="">
+            <input type="text" name="vertify" id="" v-model="code" maxlength="5" @keypress.enter="verifyTicket" autocomplete="off">
         </section>
         <section class="btn">
-            <button @click="doStuff">Vertify ticket!</button>
+            <button @click="verifyTicket">Vertify ticket!</button>
         </section>
     </main>
 </template>
 
 <script>
 export default {
-
+    name: 'verify',
+    data (){
+        return {
+            code:'',
+            codeLength: 5
+        }
+    },
+    computed: {
+        verify(){
+            return this.$store.state.verifyData;
+        }
+    },
+    methods: {
+        verifyTicket(){
+            this.$store.dispatch('verifyTicket', this.code);
+        }
+    }
 }
 </script>
 
@@ -32,7 +48,7 @@ body {
     background-color:$orange !important;
     overflow: hidden;
  
-    #staff {
+    #verify {
             max-width: 20rem;
             width: 100%;
             height: 30rem;

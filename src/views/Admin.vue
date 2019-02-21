@@ -20,14 +20,14 @@
                 </tbody>
             </table>
             <aside class="form">
-                <input type="text" placeholder="event name" v-model="newEvent.name">
-                <input type="text" placeholder="event location" v-model="newEvent.where">
-                <input type="text" placeholder="event start time" v-model="newEvent.when.from">
-                <input type="text" placeholder="event end time" v-model="newEvent.when.to">
-                <input type="text" placeholder="event month" v-model="newEvent.date.month">
-                <input type="text" placeholder="event day" v-model="newEvent.date.day">
-                <input type="number" placeholder="price" v-model="newEvent.price">
-                <input type="number" placeholder="total tickets" v-model="newEvent.tickets.available">
+                <input type="text" placeholder="Event name" v-model="newEvent.name">
+                <input type="text" placeholder="Event location" v-model="newEvent.where">
+                <input type="text" placeholder="Event start time" v-model="newEvent.when.from">
+                <input type="text" placeholder="Event end time" v-model="newEvent.when.to">
+                <input type="text" placeholder="Event month" v-model="newEvent.date.month">
+                <input type="text" placeholder="Event day" v-model="newEvent.date.day">
+                <input type="number" placeholder="Price" v-model="newEvent.price">
+                <input type="number" placeholder="Total tickets" v-model="newEvent.tickets.available">
                 <a href="#" class="btn" @click="createEvent">Create event</a>
             </aside>
         </section>
@@ -54,9 +54,9 @@ export default {
                     month: '',
                     day: ''
                 },
-                price: '',
+                price: "",
                 tickets: {
-                    available: '',
+                    available: "",
                     sold: 0
                 }
             }
@@ -112,7 +112,9 @@ export default {
             thead {
                 tr {
                     th {
-                        color:rosybrown;
+                        color: $pink;
+                        font-weight: 500;
+                        font-size: 1.2rem !important;
                         border-bottom: 1px solid #fff;
                         padding:1rem 0px;
                     }
@@ -148,6 +150,18 @@ export default {
 
         }
     }
+    .btn {  
+        @extend %center;
+        width: 100%;
+        border-radius: 15px;
+        background-color: $pink;
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 1.7rem;
+        cursor: pointer;
+        padding: .2rem;
+
+}
 }
 
 </style>
