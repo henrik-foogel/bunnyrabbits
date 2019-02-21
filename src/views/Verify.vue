@@ -6,10 +6,10 @@
         </section>
         <section class="img" v-if="verify">
             <img v-if="verify.verified" class="pass" src="../assets/pass.jpg" alt="stiffler tumbs up">
-            <img v-if="!verify.verified"  class="pass" src="../assets/fail.png" alt="stiffler finger!"> 
+            <img v-if="!verify.verified" class="pass" src="../assets/fail.png" alt="stiffler finger!"> 
         </section>
         <section class="input">
-            <input type="text" name="vertify" id="">
+            <input type="text" name="vertify" id="" v-model="code" maxlength="5" @keypress.enter="verifyTicket" autocomplete="off">
         </section>
         <section class="btn">
             <button @click="verifyTicket">Vertify ticket!</button>
