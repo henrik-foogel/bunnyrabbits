@@ -6,10 +6,12 @@
         </section>
         <section class="img" v-if="verify">
             <img v-if="verify.verified" class="pass" src="../assets/pass.jpg" alt="stiffler tumbs up">
-            <img v-if="!verify.verified" class="pass" src="../assets/fail.png" alt="stiffler finger!"> 
+            <img v-if="!verify.verified" class="fail" src="../assets/fail.png" alt="stiffler finger!"> 
+            <div><h2 class="h2-success" v-if="verify.verified">Verified</h2>
+            <h2 class="h2-fail" v-if="!verify.verified">Fail</h2></div>
         </section>
         <section class="input">
-            <input type="text" name="vertify" id="" v-model="code" maxlength="5" @keypress.enter="verifyTicket" autocomplete="off">
+            <input type="text" name="vertify" id="" :value="code.toUpperCase()" @input="code = $event.target.value.toUpperCase()" :maxlength="codeLength" @keypress.enter="verifyTicket" autocomplete="off">
         </section>
         <section class="btn">
             <button @click="verifyTicket">Vertify ticket!</button>
@@ -51,9 +53,8 @@ body {
     #verify {
             max-width: 20rem;
             width: 100%;
-            height: 30rem;
             display: grid;
-            grid-template-rows: 150px 180px 90px 90px;
+            grid-template-rows: 150px 230px 90px 90px;
             grid-template-areas:
             "logo"
             "img"
@@ -78,13 +79,26 @@ body {
     }
     .img {
         grid-area: img;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        
         .pass {
             width: 10rem;
-        border-radius: 50%;
+            border-radius: 50%;
         }  
+        .fail {
+            width: 10rem;
+            border-radius: 50%;
+        }
+        div {
+            h2 {
+                color: $green;
+                font-size: 2rem;
+                margin-top: .2rem;
+                text-shadow: 1px 2px 1px $greyich;
+            }
+            .h2-fail {
+                color: $red;
+            }
+        }
     }
     .input {
         grid-area: input;

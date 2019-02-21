@@ -1,7 +1,19 @@
 <template>
     <main id="admin">
         <section class="container">
-            <table cellspacing="0">
+            <aside class="form">
+            <h2>Add Event</h2>
+                <input type="text" placeholder="Event name" v-model="newEvent.name">
+                <input type="text" placeholder="Event location" v-model="newEvent.where">
+                <input type="text" placeholder="Event start time" v-model="newEvent.when.from">
+                <input type="text" placeholder="Event end time" v-model="newEvent.when.to">
+                <input type="text" placeholder="Event month" v-model="newEvent.date.month">
+                <input type="text" placeholder="Event day" v-model="newEvent.date.day">
+                <input type="number" placeholder="Price" v-model="newEvent.price">
+                <input type="number" placeholder="Total tickets" v-model="newEvent.tickets.available">
+                <div><a href="#" class="btn" @click="createEvent">Create event</a></div>
+            </aside>
+            <table cellspacing="0" class="table">
                 <thead>
                     <tr>
                         <th>Name:</th>
@@ -19,17 +31,6 @@
                     </tr>
                 </tbody>
             </table>
-            <aside class="form">
-                <input type="text" placeholder="Event name" v-model="newEvent.name">
-                <input type="text" placeholder="Event location" v-model="newEvent.where">
-                <input type="text" placeholder="Event start time" v-model="newEvent.when.from">
-                <input type="text" placeholder="Event end time" v-model="newEvent.when.to">
-                <input type="text" placeholder="Event month" v-model="newEvent.date.month">
-                <input type="text" placeholder="Event day" v-model="newEvent.date.day">
-                <input type="number" placeholder="Price" v-model="newEvent.price">
-                <input type="number" placeholder="Total tickets" v-model="newEvent.tickets.available">
-                <a href="#" class="btn" @click="createEvent">Create event</a>
-            </aside>
         </section>
     </main>    
 </template>
@@ -97,17 +98,23 @@ export default {
 
     .container {
         display: grid;
-        grid-template-columns: 4fr 1fr;
+        grid-template-columns: 1fr;
         max-width: 1000px;
         width: 100%;
                 font-size: 1.5rem;
                 color:#fff;
+                grid-template-rows: auto auto;
+                grid-template-areas: 
+                "form"
+                "table";
 
         table {
+            grid-area: table;
             background: rgba($color: #000000, $alpha: 0.3);
             padding: 1rem;
             text-align: left;
             padding: 1.5rem;
+
 
             thead {
                 tr {
@@ -133,35 +140,42 @@ export default {
         }
 
         .form {
+            grid-area: form;
             padding: 1.5rem 2rem 1.5rem 1.5rem;
             background: rgba($color: #000000, $alpha: 0.3);
-            margin: 0 1rem;
-            width: 10rem;
+            margin: 0 0rem;
+
+            h2 {
+                margin-top: .2rem;
+            }
 
             input {
-                width: 100%;
+                width: 30%;
                 background: none;
                 border: 1px solid #fff;
                 border-radius: 4px;
                 padding: .25rem;
-                margin: 0 0 1rem 0; 
+                margin: 1rem; 
                 color: #fff;
+            }
+
+            div {
+                @extend %center;
+
+                .btn {  
+                    width: 30%;
+                    border-radius: 15px;
+                    background-color: $pink;
+                    text-decoration: none;
+                    color: #ffffff;
+                    font-size: 1.7rem;
+                    cursor: pointer;
+                    padding: .2rem;
+                }
             }
 
         }
     }
-    .btn {  
-        @extend %center;
-        width: 100%;
-        border-radius: 15px;
-        background-color: $pink;
-        text-decoration: none;
-        color: #ffffff;
-        font-size: 1.7rem;
-        cursor: pointer;
-        padding: .2rem;
-
-}
 }
 
 </style>

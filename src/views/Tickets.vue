@@ -19,7 +19,6 @@ export default {
     }
   },
   beforeMount() {
-    console.log(this.$store.state.tickets)
     if(localStorage.getItem('tickets')){
       this.$store.dispatch('getTickets')
     }
