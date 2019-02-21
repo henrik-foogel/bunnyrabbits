@@ -12,18 +12,25 @@
     <section class="tagLine">
     <h2>Ticketing made easy..</h2>
     </section>
-
   </div>
+  <dot></dot>
 </main>
 </template>
 
 <script>
 import mainLink from '@/components/MainLink';
+import dot from '@/components/Dot';
 
 export default {
   name: 'home',
   components: {
-    mainLink
+    mainLink,
+    dot
+  }, 
+  data(){
+    return {
+      currentStep: 1
+    }
   }
 }
 </script>

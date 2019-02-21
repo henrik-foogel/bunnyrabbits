@@ -57,6 +57,7 @@ export default {
     margin-left: .5rem;
     grid-area: event-list-event;
     border-bottom: 0.5px solid rgba(255,255,255,.5);
+    
   }
   .event-list-date h1, .event-list-date p {
     width: 100%; 
