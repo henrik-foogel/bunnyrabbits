@@ -36,6 +36,7 @@
 </template>
 
 <script>
+import mainLink from '@/components/MainLink';
 import axios from 'axios'
 export default {
     name: 'admin',

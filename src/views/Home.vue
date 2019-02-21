@@ -1,4 +1,6 @@
 <template>
+<main>
+<mainLink></mainLink>
   <div class="home">
     <section class="img">
     <img src="../assets/logo.svg" alt="logo">
@@ -12,19 +14,23 @@
     </section>
 
   </div>
+</main>
 </template>
 
 <script>
+import mainLink from '@/components/MainLink';
 
 export default {
   name: 'home',
   components: {
+    mainLink
   }
 }
 </script>
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css?family=Sansita:400,800i");
 @import '../scss/variable';
+
 
 body {
     overflow: hidden;
@@ -69,4 +75,5 @@ h2 {
 .link {
   text-decoration: none;
 }
+
 </style>

@@ -54,7 +54,7 @@ export default {
     border-radius: 3px;
   }
   .event-list-event {
-    margin-left: 1.5rem;
+    margin-left: .5rem;
     grid-area: event-list-event;
     border-bottom: 0.5px solid rgba(255,255,255,.5);
   }
