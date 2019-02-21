@@ -3,12 +3,12 @@
         <section class="container">
             <aside class="form">
             <h2>Add Event</h2>
-                <input type="text" placeholder="Event name" v-model="newEvent.name">
+                <input type="text" placeholder="Event name" :value="newEvent.name.toUpperCase()" @input="newEvent.name = $event.target.value.toUpperCase()">
                 <input type="text" placeholder="Event location" v-model="newEvent.where">
-                <input type="text" placeholder="Event start time" v-model="newEvent.when.from">
-                <input type="text" placeholder="Event end time" v-model="newEvent.when.to">
-                <input type="text" placeholder="Event month" v-model="newEvent.date.month">
-                <input type="text" placeholder="Event day" v-model="newEvent.date.day">
+                <input type="text" placeholder="Event start time" v-model="newEvent.when.from" :maxlength="5">
+                <input type="text" placeholder="Event end time" v-model="newEvent.when.to" :maxlength="5">
+                <input type="text" placeholder="Event month" :value="newEvent.date.month.toUpperCase()" @input="newEvent.date.month = $event.target.value.toUpperCase()" :maxlength="3">
+                <input type="text" placeholder="Event day" v-model="newEvent.date.day" :maxlength="2">
                 <input type="number" placeholder="Price" v-model="newEvent.price">
                 <input type="number" placeholder="Total tickets" v-model="newEvent.tickets.available">
                 <div><a href="#" class="btn" @click="createEvent">Create event</a></div>
@@ -66,8 +66,21 @@ export default {
     methods: {
         async createEvent() {
 
-            this.$store.dispatch('createEvents', this.newEvent);
-            this.$store.dispatch('getEvents');
+            await this.$store.dispatch('createEvents', this.newEvent);
+            await this.$store.dispatch('getEvents');
+
+            this.clearFields()
+
+        },
+        clearFields() {
+            this.newEvent.name = '';
+            this.newEvent.where = '';
+            this.newEvent.when.from = '';
+            this.newEvent.when.to = '';
+            this.newEvent.date.month = '';
+            this.newEvent.date.day = '';
+            this.newEvent.price = '';
+            this.newEvent.tickets.available = '';
 
         }
     },

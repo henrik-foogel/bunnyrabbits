@@ -21,7 +21,6 @@ export default {
     props: ['event'],
     methods: {
       setEvent(event) {
-        console.log(event)
         this.$store.commit('selectedEvent', event)
         this.$router.push({ name: 'buy', params: {id:event._id} })
       }

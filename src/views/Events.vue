@@ -3,10 +3,10 @@
     <section class="event-title">Events</section>
     <section class="event-search">
       <span class="fa fa-search" style="top: 1.8rem; left: 0.7rem; float: left; color: rgba(255, 255, 255, 0.2);"></span>
-      <input type="text">
+      <input type="text" v-model="search" placeholder="search events">
     </section>
     <section>
-      <event v-for="event in eventList" :key="event.id" :event="event"/>
+      <event v-for="event in filteredEvents" :key="event.id" :event="event"/>
     </section>
   </main>
 </template>
@@ -16,12 +16,22 @@ import event from '@/components/Event';
 
 export default {
   name: 'events',
+  data() {
+    return {
+      search: ''
+    }
+  },
   components: {
     event
   }, 
   computed: {
     eventList() {
       return this.$store.state.events
+    },
+    filteredEvents: function() {
+      return this.eventList.filter((event) => {
+        return event.name.match(this.search.toUpperCase());
+      })
     }
   },
   beforeMount() {
