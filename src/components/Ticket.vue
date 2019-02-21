@@ -39,6 +39,7 @@ export default {
   "code code code";
 
     .what {
+      margin-top: .6rem;
       grid-area: what;
       font-size: 2.5rem;
       color: $main_bg;
