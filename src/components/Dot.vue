@@ -12,7 +12,7 @@ export default {
     props: ['currentDot'],
     data(){
         return {
-            dots: 3
+            dots: 3,
         }
     }
 }

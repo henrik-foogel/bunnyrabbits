@@ -32,8 +32,10 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css?family=Sansita+One');
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans');
-  .event {
-    padding-bottom: 1rem;
+.event {
+    display: flex;
+    width: 100%;
+    margin-bottom: 1.5rem;
   }
   .event-list {
     font-family: Fira Sans;

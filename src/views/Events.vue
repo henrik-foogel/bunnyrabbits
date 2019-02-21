@@ -5,7 +5,7 @@
       <span class="fa fa-search" style="top: 1.8rem; left: 0.7rem; float: left; color: rgba(255, 255, 255, 0.2);"></span>
       <input type="text">
     </section>
-    <section>
+    <section class="margin">
       <event v-for="event in eventList" :key="event.id" :event="event"/>
     </section>
         <div class="dot">
@@ -86,7 +86,16 @@ export default {
     padding-left: 2.3rem;
     max-width: -webkit-fill-available;
   }
+  .margin {
+    margin-bottom: 2.5rem;
+  }
   .dot {
-    margin: 1.5rem;
+    position: fixed;
+    width: 100%;
+    height: 30px;
+    padding: 1rem  0;
+    z-index: 10;
+    bottom: 0px;
+    background: #231F42;
   }
 </style>
