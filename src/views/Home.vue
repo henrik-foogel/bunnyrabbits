@@ -7,7 +7,6 @@
     </section>
     <section class="name">
       <router-link class="link" to="/Events"><h1> Were it´s @!</h1></router-link>
-    
     </section>
     <section class="tagLine">
     <h2>Ticketing made easy..</h2>
@@ -27,7 +26,7 @@ export default {
   name: 'home',
     data(){
     return {
-      currentDot: 1
+      currentDot: 1,
     }
   },
   components: {

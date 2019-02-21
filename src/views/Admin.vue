@@ -102,12 +102,12 @@ export default {
         grid-template-columns: 1fr;
         max-width: 1000px;
         width: 100%;
-                font-size: 1.5rem;
-                color:#fff;
-                grid-template-rows: auto auto;
-                grid-template-areas: 
-                "form"
-                "table";
+        font-size: 1.5rem;
+        color:#fff;
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+        "form"
+        "table";
 
         table {
             grid-area: table;

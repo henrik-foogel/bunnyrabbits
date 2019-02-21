@@ -24,6 +24,7 @@ export default {
 
     #dot {
         display: flex;
+
         ul {
             flex: 1;
             margin: 0;
@@ -32,11 +33,11 @@ export default {
             @extend %center;
 
             li {
-                width: .3rem;
-                height: .3rem;
-                margin: .5rem;
+                width: .4rem;
+                height: .4rem;
+                margin: 1rem;
                 background: $greyich;
-                border-radius: 50%;
+                border-radius: 100rem;
             
                 &.active {
                     background: white;
