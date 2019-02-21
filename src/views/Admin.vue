@@ -54,9 +54,9 @@ export default {
                     month: '',
                     day: ''
                 },
-                price: 0,
+                price: '',
                 tickets: {
-                    available: 0,
+                    available: '',
                     sold: 0
                 }
             }
