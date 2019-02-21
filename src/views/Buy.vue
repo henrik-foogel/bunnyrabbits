@@ -23,17 +23,25 @@
     <section class="btnBuy">
       <div class="btn" @click="buy(event)">Boka!</div>
     </section>
+    <div class="dot">
+      <dot :currentDot="currentDot"/>
+    </div>
   </div>
 </template>
 
 <script>
+import dot from '@/components/Dot';
 
 export default {
   name: 'buy',
   data() {
     return {
-      amount: 1
+      amount: 1,
+      currentDot: 3
     }
+  },
+  components: {
+    dot
   },
   computed: {
     event() {
@@ -71,10 +79,9 @@ body {
   .buy {
     font-family: 'Sansita', sans-serif;
     max-width: 18rem;
-    width: 100%;
     display: grid;
     grid-template-columns:  repeat(3, 1fr);
-    grid-template-rows: 90px 120px 50px 120px 90px auto ;
+    grid-template-rows: 90px 110px 50px 120px 90px auto 60px ;
     grid-template-areas:
     "heading heading heading"
     "eventInfo eventInfo eventInfo"
@@ -82,10 +89,12 @@ body {
     "sumPrice sumPrice sumPrice"
     "amountMinus amount amountPlus"
     "btnBuy btnBuy btnBuy"
+    ". dot .";
   }
 
   .heading {
   grid-area: heading;
+  margin-top: 1.5rem;
 } 
 
 .eventInfo {
@@ -157,17 +166,19 @@ body {
 }
 
 .btn {  
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 90%;
-  height: 90%;
-  border-radius: 15px;
+  width: 100%;
+  border-radius: 8px;
   background-color: #F56B9A;
   text-decoration: none;
   color: #ffffff;
   font-size: 2rem;
   cursor: pointer;
+}
+.dot {
+  grid-area: dot;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 h1 {
   font-size:2.5rem;

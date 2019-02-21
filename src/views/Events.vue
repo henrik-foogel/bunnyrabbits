@@ -8,16 +8,26 @@
     <section>
       <event v-for="event in eventList" :key="event.id" :event="event"/>
     </section>
+        <div class="dot">
+      <dot :currentDot="currentDot"/>
+    </div>
   </main>
 </template>
 
 <script>
 import event from '@/components/Event';
+import dot from '@/components/Dot';
 
 export default {
   name: 'events',
+  data(){
+    return {
+      currentDot: 2
+    }
+  },
   components: {
-    event
+    event,
+    dot
   }, 
   computed: {
     eventList() {
@@ -41,10 +51,10 @@ export default {
     width: 100%;
     height: 50rem;
     display: grid;
-    grid-template-rows: 120px 100px 250px;
+    grid-template-rows: 120px 100px;
     grid-template-areas: "event-title"
     "event-search"
-    "event-list"
+    
   }
   .event-title {
     grid-area: event-title;
@@ -75,5 +85,8 @@ export default {
     font-size: 20px;
     padding-left: 2.3rem;
     max-width: -webkit-fill-available;
+  }
+  .dot {
+    margin: 1.5rem;
   }
 </style>

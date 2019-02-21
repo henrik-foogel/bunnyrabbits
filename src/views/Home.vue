@@ -13,7 +13,9 @@
     <h2>Ticketing made easy..</h2>
     </section>
   </div>
-  <dot></dot>
+    <div class="dot">
+      <dot :currentDot="currentDot"/>
+    </div>
 </main>
 </template>
 
@@ -23,14 +25,14 @@ import dot from '@/components/Dot';
 
 export default {
   name: 'home',
+    data(){
+    return {
+      currentDot: 1
+    }
+  },
   components: {
     mainLink,
     dot
-  }, 
-  data(){
-    return {
-      currentStep: 1
-    }
   }
 }
 </script>
@@ -49,15 +51,17 @@ body {
     max-width: 18rem;
     display: grid;
     grid-template-columns: 1;
-    grid-template-rows: 5fr 1fr auto ;
+    grid-template-rows: 5fr 1fr auto 150px;
     grid-template-areas:
     "img"
      "name"
     "tagLine"
+    "dot"
     }
     
   .img {
   grid-area: img;
+  margin-top: 2rem;
 } 
   .name {
   grid-area: name;
@@ -65,12 +69,19 @@ body {
   .tagLine {
   grid-area: tagLine;
 } 
+.dot{
+  grid-area: dot;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
 h1{
   font-family: 'Sansita', sans-serif;
   font-size: 2rem;
   margin: 0%;
   padding: 0%;
-  color: #F56B9A;
+  color: $pink;
 }
 h2 {  
   margin: 0%;
