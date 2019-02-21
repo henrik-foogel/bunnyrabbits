@@ -78,10 +78,12 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+
+@import '../scss/variable';
 
 #admin {
-    background-color: #231F42;
+    background-color: $main_bg;
     display: flex;
     justify-content: center;
 
