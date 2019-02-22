@@ -41,6 +41,7 @@ export default {
     name: 'admin',
     beforeMount() {
         this.$store.dispatch('getEvents');
+        this.$store.state.tickets = []
     },
     data() {
         return {

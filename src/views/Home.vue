@@ -19,6 +19,9 @@
 export default {
   name: 'home',
   components: {
+  },
+  beforeMount() {
+    this.$store.state.tickets = []
   }
 }
 </script>

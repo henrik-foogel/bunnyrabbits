@@ -36,13 +36,13 @@ export default {
   },
   beforeMount() {
     this.$store.dispatch('getEvents');
+    this.$store.state.tickets = []
   }
 }
 </script>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Sansita+One');
-@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans');
 
   .events {
@@ -51,7 +51,7 @@ export default {
     width: 100%;
     height: 50rem;
     display: grid;
-    grid-template-rows: 120px 100px 250px;
+    grid-template-rows: 90px 100px 250px;
     grid-template-areas: "event-title"
     "event-search"
     "event-list"
@@ -67,6 +67,7 @@ export default {
     color: #F56B9A;
     margin-top: 2rem;
     bottom: 0;
+    margin-bottom: 0;
   }
   .event-search {
     grid-area: event-search;

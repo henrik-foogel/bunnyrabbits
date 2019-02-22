@@ -19,7 +19,7 @@ export default new Vuex.Store({
       state.events = events
     },
     setTickets(state, tickets) {
-      state.tickets.push(tickets)
+        state.tickets.push(tickets)
     } ,
     setVerifyData(state, data) {
       state.verifyData = data;
@@ -50,8 +50,9 @@ export default new Vuex.Store({
         if(localStorage.getItem(`tickets`+i)){
           let tickets = await localStorage.getItem(`tickets`+i)
           let t = (JSON.parse(tickets));
-          ctx.commit('setTickets', t)
-          console.log(t);
+          if(!this.state.tickets.includes(t)) {
+            ctx.commit('setTickets', t)
+          }
         }
     },
     async verifyTicket(ctx, code) {

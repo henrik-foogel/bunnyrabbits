@@ -40,10 +40,11 @@ export default {
 
     .what {
       grid-area: what;
-      font-size: 2.5rem;
+      font-size: 2rem;
       color: $main_bg;
       font-weight: 700;
       @extend %center;
+      padding-bottom: 0.5rem;
     }
     .where {
       grid-area: where;
@@ -52,6 +53,7 @@ export default {
       font-weight: 700;
       @extend %center;
       padding-bottom: .2rem;
+      padding-bottom: 2rem;
     }
     .when {
       grid-area: when;
@@ -61,6 +63,7 @@ export default {
       padding-bottom: .6rem;
       font-size: 1.3rem;
       font-weight: 800;
+      padding-bottom: 1.5rem;
     }
     .from {
       grid-area: from;
@@ -70,6 +73,7 @@ export default {
       padding-bottom: .6rem;
       font-size: 1.3rem;
       font-weight: 800;
+      padding-bottom: 1.5rem;
     }
     .to {
       grid-area: to;
@@ -79,6 +83,7 @@ export default {
       padding-bottom: .6rem;
       font-size: 1.3rem;
       font-weight: 800;
+      padding-bottom: 1.5rem;
     }
     .code {
       grid-area: code;
