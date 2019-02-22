@@ -15,6 +15,7 @@
         </section>
         <section class="btn">
             <button @click="verifyTicket">Vertify ticket!</button>
+              <router-link class="link" to="/">Start sidan</router-link>
         </section>
     </main>
 </template>
@@ -42,7 +43,7 @@ export default {
 }
 </script>
 
- <style lang="scss">
+ <style lang="scss" >
  @import '../scss/variable';
  @import url('https://fonts.googleapis.com/css?family=Fira+Sans');
 
@@ -127,6 +128,13 @@ body {
         font-size: 26px;
         letter-spacing: .2em;
         color: #fff;
+        margin-bottom: 1rem;
+        }
+        .link {
+        text-decoration: none;
+        bottom: 0;
+        text-align: center;
+        color:$greyich;
     } 
   }
 }

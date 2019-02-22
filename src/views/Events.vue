@@ -1,6 +1,5 @@
 <template>
   <main class="events">
-    <div class="test">
     <section class="event-title">Events</section>
     <section class="event-search">
       <span class="fa fa-search" style="top: 1.8rem; left: 0.7rem; float: left; color: rgba(255, 255, 255, 0.2);"></span>
@@ -12,7 +11,6 @@
     <span class="dot">
       <dot :currentDot="currentDot"/>
     </span>
-    </div>
   </main>
 </template>
 
@@ -65,9 +63,6 @@ export default {
     grid-template-areas: "event-title"
     "event-search"
   }
-  .test {
-    width: 100%;
-  }
   .event-title {
     grid-area: event-title;
     font-family: 'Sansita One';
@@ -101,7 +96,7 @@ export default {
     margin-bottom: 1.5rem;
   }
   .margin {
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
   }
  
 

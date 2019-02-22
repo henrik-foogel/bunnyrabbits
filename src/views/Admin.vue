@@ -31,6 +31,7 @@
                     </tr>
                 </tbody>
             </table>
+             <router-link class="link" to="/">Start sidan</router-link>
         </section>
     </main>    
 </template>
@@ -190,6 +191,14 @@ export default {
             }
 
         }
+          .link {
+      text-decoration: none;
+      bottom: 0;
+      text-align: center;
+      color:$greyich;
+      font-size: 16px;
+      margin-top: .75rem;
+    }
     }
 }
 

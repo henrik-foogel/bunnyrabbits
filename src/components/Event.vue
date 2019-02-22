@@ -76,11 +76,9 @@ export default {
   .event-list-date p {
     margin: 0;
   }
-
   .event-list-event {
     text-align: left;
   }
-
   .event-list-event h1 {
     margin: -0.2rem 0 0.3rem;
     font-size: 22px;

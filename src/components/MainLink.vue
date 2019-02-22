@@ -2,6 +2,7 @@
       <span class="linkHome">
       <router-link class="link" to="/Admin">Admin</router-link>
       <router-link class="link" to="/Tickets">Köpta Biljetter</router-link>
+      <router-link class="link" to="/Verify">Staff</router-link>
     </span>
 </template>
 
