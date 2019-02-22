@@ -177,18 +177,6 @@ body {
   font-size: 2rem;
   cursor: pointer;
 }
-  .dot{
-  grid-area: dot;
-  @extend %center;
-  position: fixed;
-  width: 100%;
-  height: 30px;
-  padding: 1rem  0;
-  z-index: 10;
-  bottom: 0px;
-  left: 0px;
-  background: $main_bg;
-}
 h1 {
   font-size:2.5rem;
   margin-top: 0;

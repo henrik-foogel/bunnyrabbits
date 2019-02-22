@@ -34,8 +34,18 @@ body {
   text-align: center;
   width: 100%;
 }
-
-
+  .dot{
+  grid-area: dot;
+  @extend %center;
+  position: fixed;
+  width: 100%;
+  height: 30px;
+  padding: 1rem  0;
+  z-index: 10;
+  bottom: 0px;
+  left: 0px;
+  background: $main_bg;
+}
 .fade-enter-active,
 .fade-leave-active {
   transition-duration: 0.3s;

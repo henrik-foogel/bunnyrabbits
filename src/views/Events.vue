@@ -103,17 +103,7 @@ export default {
   .margin {
     margin-bottom: 2.5rem;
   }
-  .dot{
-  @extend %center;
-  position: fixed;
-  width: 100%;
-  height: 30px;
-  padding: 1rem  0;
-  z-index: 10;
-  bottom: 0px;
-  left: 0px;
-  background: $main_bg;
-}
+ 
 
 
 </style>
