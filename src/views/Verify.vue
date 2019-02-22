@@ -15,7 +15,7 @@
         </section>
         <section class="btn">
             <button @click="verifyTicket">Vertify ticket!</button>
-              <router-link class="link" to="/">Start sidan</router-link>
+              <router-link class="link" to="/" onclick="location.reload(true)">Start sidan</router-link>
         </section>
     </main>
 </template>
@@ -50,7 +50,6 @@ export default {
  /* Kanske onödigt att ha grid när ändå allt bara ska ligga påvaranndra, men övning ger färdighet, så vi kör på de ändå!*/
 body {
     background-color:$orange !important;
-    overflow: hidden;
  
     #verify {
             max-width: 20rem;
