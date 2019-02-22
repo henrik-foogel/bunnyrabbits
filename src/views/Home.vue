@@ -7,7 +7,6 @@
     </section>
     <section class="name">
       <router-link class="link" to="/Events"><h1> Were it´s @!</h1></router-link>
-    
     </section>
     <section class="tagLine">
     <h2>Ticketing made easy..</h2>
@@ -54,7 +53,7 @@ body {
     max-width: 18rem;
     display: grid;
     grid-template-columns: 1;
-    grid-template-rows: 5fr 1fr auto 150px;
+    grid-template-rows: 3fr 1fr 60px 150px;
     grid-template-areas:
     "img"
      "name"
@@ -74,9 +73,7 @@ body {
 } 
 .dot{
   grid-area: dot;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @extend %center;
   width: 100%;
   height: 30px;
   padding: 1rem  0;

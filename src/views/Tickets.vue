@@ -2,6 +2,7 @@
 <main>
   <div class="page"><span class="arrows" @click="ticketPageDown()">&#8249;</span><span>{{ page }}</span><span class="arrows" @click="ticketPageUpp()">&#8250;</span></div>
   <ticket v-for="ticket in tickets[ticketIndex]" :key="ticket.code" :ticket="ticket"></ticket>
+      <router-link class="link" to="/">Start sidan</router-link>
 
   </main>
 </template>
@@ -57,11 +58,20 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+@import '../scss/variable';
+
   main {
     font-family: "Sansita", sans-serif;
     display: flex;
     align-self: baseline;
     flex-direction: column;
+    
+      .link {
+      text-decoration: none;
+      bottom: 0;
+      text-align: center;
+      color:$greyich;
+    }
   }
   .page {
     margin-bottom: 1rem;

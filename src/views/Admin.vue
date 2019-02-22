@@ -32,6 +32,7 @@
                 </tbody>
             </table>
         </section>
+              <router-link class="link" to="/">Start sidan</router-link>
     </main>    
 </template>
 

@@ -27,7 +27,8 @@ export default {
 @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
 @import './scss/variable';
 body {
-    background-color:$main_bg !important; 
+    background-color:$main_bg; 
+    overflow: scroll;
 }
 #app {
   @extend %center;
@@ -46,6 +47,7 @@ body {
   left: 0px;
   background: $main_bg;
 }
+
 .fade-enter-active,
 .fade-leave-active {
   transition-duration: 0.3s;
