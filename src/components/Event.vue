@@ -31,8 +31,10 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css?family=Sansita+One');
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans');
-  .event {
-    padding-bottom: 1rem;
+.event {
+    display: flex;
+    width: 100%;
+    margin-bottom: 1.5rem;
   }
   .event-list {
     font-family: Fira Sans;
@@ -53,9 +55,10 @@ export default {
     border-radius: 3px;
   }
   .event-list-event {
-    margin-left: 1.5rem;
+    margin-left: .5rem;
     grid-area: event-list-event;
     border-bottom: 0.5px solid rgba(255,255,255,.5);
+    
   }
   .event-list-date h1, .event-list-date p {
     width: 100%; 

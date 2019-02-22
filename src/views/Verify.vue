@@ -20,6 +20,7 @@
 </template>
 
 <script>
+import mainLink from '@/components/MainLink';
 export default {
     name: 'verify',
     data (){

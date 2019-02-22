@@ -1,28 +1,36 @@
 <template>
   <main class="events">
+    <div class="test">
     <section class="event-title">Events</section>
     <section class="event-search">
       <span class="fa fa-search" style="top: 1.8rem; left: 0.7rem; float: left; color: rgba(255, 255, 255, 0.2);"></span>
       <input type="text" v-model="search" placeholder="search events">
     </section>
-    <section>
+    <section class="margin">
       <event v-for="event in filteredEvents" :key="event.id" :event="event"/>
     </section>
+    <span class="dot">
+      <dot :currentDot="currentDot"/>
+    </span>
+    </div>
   </main>
 </template>
 
 <script>
 import event from '@/components/Event';
+import dot from '@/components/Dot';
 
 export default {
   name: 'events',
   data() {
     return {
-      search: ''
+      search: '',
+      currentDot: 2
     }
   },
   components: {
-    event
+    event,
+    dot
   }, 
   computed: {
     eventList() {
@@ -40,10 +48,12 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 @import url('https://fonts.googleapis.com/css?family=Sansita+One');
 @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans');
+
+@import '../scss/variable';
 
   .events {
     font-family: 'Sansita One';
@@ -51,10 +61,12 @@ export default {
     width: 100%;
     height: 50rem;
     display: grid;
-    grid-template-rows: 120px 100px 250px;
+    grid-template-rows: 120px 100px ;
     grid-template-areas: "event-title"
     "event-search"
-    "event-list"
+  }
+  .test {
+    width: 100%;
   }
   .event-title {
     grid-area: event-title;
@@ -64,7 +76,7 @@ export default {
     line-height: normal;
     font-size: 32px;
     text-align: center;
-    color: #F56B9A;
+    color: $pink;
     margin-top: 2rem;
     bottom: 0;
   }
@@ -85,5 +97,25 @@ export default {
     font-size: 20px;
     padding-left: 2.3rem;
     max-width: -webkit-fill-available;
+    margin-bottom: 1.5rem;
   }
+  .margin {
+    margin-bottom: 2.5rem;
+  }
+  .dot{
+  grid-area: dot;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 30px;
+  padding: 1rem  0;
+  z-index: 10;
+  bottom: 0px;
+  left: 0px;
+  background: $main_bg;
+}
+
+
 </style>

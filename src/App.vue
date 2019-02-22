@@ -9,8 +9,13 @@
 </template>
 
 <script>
+
+
 export default {
   name: 'App',
+    components: {
+    
+  },
   beforeMount() {
     this.$store.dispatch('getEvents');
   }
@@ -21,18 +26,15 @@ export default {
 
 @import './scss/variable';
 body {
-    background-color:$main_bg !important;
-    margin: 1rem 0;
+    background-color:$main_bg !important; 
 }
-
 #app {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @extend %center;
   text-align: center;
-  min-height: 568px;
   width: 100%;
 }
+
+
 .fade-enter-active,
 .fade-leave-active {
   transition-duration: 0.3s;
