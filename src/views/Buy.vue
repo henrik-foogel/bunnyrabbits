@@ -66,6 +66,9 @@ export default {
     removeTickets(){
       this.amount--
     }
+  },
+  beforeMount() {
+    this.$store.state.tickets = []
   }
 }
 </script>

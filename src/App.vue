@@ -24,6 +24,7 @@ export default {
 
 <style lang="scss">
 
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
 @import './scss/variable';
 body {
     background-color:$main_bg !important; 

@@ -33,6 +33,9 @@ export default {
   components: {
     mainLink,
     dot
+  },
+  beforeMount() {
+    this.$store.state.tickets = []
   }
 }
 </script>

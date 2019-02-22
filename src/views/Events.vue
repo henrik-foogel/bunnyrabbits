@@ -44,13 +44,13 @@ export default {
   },
   beforeMount() {
     this.$store.dispatch('getEvents');
+    this.$store.state.tickets = []
   }
 }
 </script>
 
 <style lang="scss" scoped>
 @import url('https://fonts.googleapis.com/css?family=Sansita+One');
-@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans');
 
 @import '../scss/variable';
@@ -79,6 +79,7 @@ export default {
     color: $pink;
     margin-top: 2rem;
     bottom: 0;
+    margin-bottom: 0;
   }
   .event-search {
     grid-area: event-search;
