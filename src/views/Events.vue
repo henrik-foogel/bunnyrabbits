@@ -103,10 +103,7 @@ export default {
     margin-bottom: 2.5rem;
   }
   .dot{
-  grid-area: dot;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @extend %center;
   position: fixed;
   width: 100%;
   height: 30px;
