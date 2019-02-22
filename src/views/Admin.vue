@@ -31,7 +31,7 @@
                     </tr>
                 </tbody>
             </table>
-             <router-link class="link" to="/">Start sidan</router-link>
+             <router-link class="link" to="/">Start page</router-link>
         </section>
     </main>    
 </template>
