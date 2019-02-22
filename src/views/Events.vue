@@ -5,6 +5,7 @@
       <span class="fa fa-search" style="top: 1.8rem; left: 0.7rem; float: left; color: rgba(255, 255, 255, 0.2);"></span>
       <input type="text" v-model="search" placeholder="search events">
     </section>
+    test
     <section>
       <event v-for="event in filteredEvents" :key="event.id" :event="event"/>
     </section>
