@@ -1,7 +1,7 @@
 <template>
   <div class="buy">
     <section class="heading">
-    <p>Du köper biljetter till följande evenimang:</p>
+    <p>You're buying tickets to:</p>
     </section>
     <section class="eventInfo">
       <h2>{{ event.name }}</h2> 
@@ -20,8 +20,10 @@
     <section class="amountPlus"  @click="addTickets">
      <span><h1>+</h1></span>
     </section>
+    <section class="buying-more">
+      <p>If you buy tickets in different rounds, then they will not end up in order on the ticket side</p></section>
     <section class="btnBuy">
-      <div class="btn" @click="buy(event)">Boka!</div>
+      <div class="btn" @click="buy(event)">Buy!</div>
     </section>
     <div class="dot">
       <dot :currentDot="currentDot"/>
@@ -84,13 +86,14 @@ body {
     max-width: 18rem;
     display: grid;
     grid-template-columns:  repeat(3, 1fr);
-    grid-template-rows: 90px 110px 50px 120px 90px auto 60px ;
+    grid-template-rows: 90px 110px 50px 120px 90px 60px auto 60px ;
     grid-template-areas:
     "heading heading heading"
     "eventInfo eventInfo eventInfo"
     "ticketsAvailable ticketsAvailable ticketsAvailable"
     "sumPrice sumPrice sumPrice"
     "amountMinus amount amountPlus"
+    "buying-more buying-more buying-more"
     "btnBuy btnBuy btnBuy"
     ". dot .";
   }
@@ -161,6 +164,9 @@ body {
   color: #ffffff;
   cursor: pointer;
 }
+.buying-more {
+  grid-area: buying-more;
+}
 .btnBuy {
   grid-area: btnBuy;
   display: flex;
@@ -176,6 +182,7 @@ body {
   color: #ffffff;
   font-size: 2rem;
   cursor: pointer;
+  padding-bottom: .5rem;
 }
 h1 {
   font-size:2.5rem;

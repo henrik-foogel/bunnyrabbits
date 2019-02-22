@@ -2,7 +2,7 @@
 <main>
   <div class="page"><span class="arrows" @click="ticketPageDown()">&#8249;</span><span>{{ page }}</span><span class="arrows" @click="ticketPageUpp()">&#8250;</span></div>
   <ticket v-for="ticket in tickets[ticketIndex]" :key="ticket.code" :ticket="ticket"></ticket>
-  <router-link class="link" to="/">Start sidan</router-link>
+  <router-link class="link" to="/">Start page</router-link>
 
 
   </main>
