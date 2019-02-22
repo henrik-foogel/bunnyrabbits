@@ -28,7 +28,6 @@ export default {
   methods: {
     ticketPageUpp() {
       if(this.ticketIndex == this.$store.state.tickets.length-1) {
-        console.log(this.$store.state.tickets.length)
         this.page = 1
         this.ticketIndex = 0
       } else {
@@ -38,7 +37,6 @@ export default {
     },
     ticketPageDown() {
       if(this.ticketIndex == 0) {
-        console.log(this.$store.state.tickets.length)
         this.page = this.$store.state.tickets.length
         this.ticketIndex = this.$store.state.tickets.length-1
       } else {
