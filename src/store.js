@@ -41,7 +41,7 @@ export default new Vuex.Store({
       ctx.commit('setEvents', events.data)
     },
     async addTicket(ctx, buyData) {
-      let tickets = await axios.post('http://localhost:3000/tickets', buyData)
+      let tickets = await axios.post('https://heroserver-666.herokuapp.com/', buyData)
       let time = new Date().getUTCSeconds()
       localStorage.setItem('tickets' + time, JSON.stringify(tickets.data))
     },
